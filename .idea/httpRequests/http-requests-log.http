@@ -1,0 +1,27 @@
+POST http://localhost:8081/admin/addQuestion
+Content-Type: application/json
+Content-Length: 67
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 0,
+  "problemId": 0,
+  "question": "",
+  "students": []
+}
+
+<> 2025-02-19T120128.400.txt
+
+###
+
+GET http://localhost:8081/auth/
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-02-16T202812.200.txt
+
+###
+
