@@ -3,11 +3,17 @@ package com.pbl.service.Implemetaion;
 
 import com.pbl.model.Question;
 import com.pbl.model.Student;
+import com.pbl.model.UserAuth;
+import com.pbl.model.UserDetailsImplementation;
 import com.pbl.repository.QuestionRepository;
+import com.pbl.repository.UserAuthRepository;
 import com.pbl.service.QuestionService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,5 +59,20 @@ public class QuestionServiceImplementation implements QuestionService {
     }
 
     public static class JWTServiceImplementation {
+    }
+
+    @Service
+    public static class UserDetailsServiceImplementation implements UserDetailsService {
+        @Autowired
+        UserAuthRepository repo;
+
+        @Override
+        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+            UserAuth userAuth = repo.findByUsername(username);
+            if(userAuth==null) {
+                throw  new UsernameNotFoundException("Username not found!");
+            }
+            return new UserDetailsImplementation(userAuth);
+        }
     }
 }

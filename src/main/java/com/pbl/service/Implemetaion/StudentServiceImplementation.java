@@ -39,6 +39,7 @@ public class StudentServiceImplementation implements StudentService {
 
     @Override
     public Question getQuestionByStudentUsername(String username) {
+        System.out.println("Student: "+ username);
         Student student = repository.findByUsername(username);
         if(student.getQuestion()==null) {
             throw new QuestionNotAssignedException("Question Not Assigned Exception!!!");

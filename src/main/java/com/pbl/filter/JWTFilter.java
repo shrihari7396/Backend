@@ -1,7 +1,7 @@
 package com.pbl.filter;
 
+import com.pbl.service.Implemetaion.QuestionServiceImplementation;
 import com.pbl.service.JWTService;
-import com.pbl.service.UserDetailsServiceImplementation;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,7 +37,7 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
         if(username!=null && SecurityContextHolder.getContext().getAuthentication()==null) {
-            UserDetails userDetails=context.getBean(UserDetailsServiceImplementation.class).loadUserByUsername(username);
+            UserDetails userDetails=context.getBean(QuestionServiceImplementation.UserDetailsServiceImplementation.class).loadUserByUsername(username);
             if(jwtService.validateToken(token,userDetails)) {
                 UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(username, userDetails,userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
