@@ -44,7 +44,6 @@ public class SecurityAuthConfig {
 //                    .anyRequest().authenticated()
                     .anyRequest().permitAll()
         );
-
         http.formLogin(customizer->customizer.disable());
         http.httpBasic(Customizer.withDefaults());
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
