@@ -19,10 +19,11 @@ public class StudentController {
     private StudentService service;
 
     @GetMapping("/getQuestion/{studentUsername}")
-    public ResponseEntity<Question> student(@PathVariable String studentUsername) {
-
+    public ResponseEntity<?> student(@PathVariable String studentUsername) {
+        if(!BooleanClass.questionAssigned) {
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Question Not Assigned yet !!!");
+        }
         Question studentQuestion = service.getQuestionByStudentUsername(studentUsername);
-
         return ResponseEntity.status(HttpStatus.OK).body(studentQuestion);
     }
 }

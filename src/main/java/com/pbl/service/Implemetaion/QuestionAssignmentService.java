@@ -1,5 +1,6 @@
 package com.pbl.service.Implemetaion;
 
+import com.pbl.helper.BooleanClass;
 import com.pbl.model.Question;
 import com.pbl.model.Student;
 import com.pbl.repository.QuestionRepository;
@@ -20,6 +21,7 @@ public class QuestionAssignmentService implements com.pbl.service.QuestionAssign
 
     @Override
     public void assignQuestionsRandomly() {
+        BooleanClass.questionAssigned = true;
         List<Student> students = studentRepository.findAll();
         List<Question> questions = questionRepository.findAll();
 
