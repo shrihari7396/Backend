@@ -32,7 +32,7 @@ spring:
 
 # Server specification
 server:
-  port: 8080
+  port: 8081
 
 # Request Information and their status when they are called by another application
 logging:
