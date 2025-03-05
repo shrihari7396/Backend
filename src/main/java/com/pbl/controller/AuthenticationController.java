@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthenticationController {
 
     @Autowired
@@ -17,7 +17,7 @@ public class AuthenticationController {
 
     @GetMapping("/")
     public String prn() {
-        return "Hello Admin";
+        return "Hello Authentication Controller here...!";
     }
 
     @PostMapping("/login")
