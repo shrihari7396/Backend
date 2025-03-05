@@ -11,4 +11,5 @@ public interface StudentService {
     void removeStudentByUsername(String username);
     Question getQuestionByStudentUsername(String username);
     List<Student> getAllStudents();
+    void check();
 }

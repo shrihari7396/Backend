@@ -38,4 +38,3 @@ logging:
       springframework:
         web: DEBUG
         web.filter.CommonsRequestLoggingFilter: DEBUG
-

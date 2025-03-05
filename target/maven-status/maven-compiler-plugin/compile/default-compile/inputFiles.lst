@@ -2,8 +2,8 @@ C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\BackendApp
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\config\SecurityAuthConfig.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\AdminController.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\AssignQuestion.java
-C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\AuthenticationContrloller.java
-C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\exception\ExceptionHandlerController.java
+C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\AuthenticationController.java
+C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\exceptionHandler\ExceptionHandlerController.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\HomeController.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\controller\StudentController.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\exception\QuestionNotAssignedException.java
@@ -31,4 +31,3 @@ C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\service\Qu
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\service\QuestionService.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\service\StudentService.java
 C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\service\UserAuthService.java
-C:\Users\shrih\Desktop\PBL\Main Backend\Backend\src\main\java\com\pbl\service\UserDetailsServiceImplementation.java

@@ -21,9 +21,8 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserAuth> login(@RequestBody UserAuth userAuth) {
-
-        return null;
+    public ResponseEntity<?> login(@RequestBody UserAuth userAuth) {
+        return ResponseEntity.status(HttpStatus.OK).body(service.verifyUserAuth(userAuth));
     }
 
     @PostMapping("/register")

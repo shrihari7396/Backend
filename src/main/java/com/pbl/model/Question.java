@@ -1,7 +1,7 @@
 package com.pbl.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,10 +27,7 @@ public class Question {
     @Column(nullable = false)
     private String question;
 
-//    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonManagedReference
-//    @Builder.Default
-//    private List<Student> students=new ArrayList<>();
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "question", orphanRemoval = false)
+    @JsonBackReference
     private List<Student> students = new ArrayList<>();
 }

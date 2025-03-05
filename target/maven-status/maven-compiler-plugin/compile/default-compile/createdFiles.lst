@@ -17,10 +17,8 @@ com\pbl\service\Implemetaion\UserAuthServiceImplementation.class
 com\pbl\repository\UserAuthRepository.class
 com\pbl\model\Student.class
 com\pbl\filter\JWTFilter.class
-com\pbl\controller\exception\ExceptionHandlerController.class
 com\pbl\model\Admin$AdminBuilder.class
 com\pbl\model\Admin.class
-com\pbl\controller\AuthenticationContrloller.class
 com\pbl\model\Question$QuestionBuilder.class
 com\pbl\service\Implemetaion\JWTServiceImplementation.class
 com\pbl\service\Implemetaion\QuestionServiceImplementation.class
@@ -34,6 +32,5 @@ com\pbl\controller\AssignQuestion.class
 com\pbl\controller\HomeController.class
 com\pbl\model\ROLE.class
 com\pbl\service\Implemetaion\QuestionAssignmentService.class
-com\pbl\service\UserDetailsServiceImplementation.class
 com\pbl\service\QuestionService.class
 com\pbl\exception\QuestionNotAssignedException.class

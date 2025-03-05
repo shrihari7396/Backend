@@ -1,7 +1,6 @@
 package com.pbl.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,8 +23,8 @@ public class Student {
     @Builder.Default
     private ROLE role = ROLE.STUDENT;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
     @JoinColumn(name = "question_id", nullable = true)
-    @JsonBackReference
-    private Question question=null;
+    @JsonManagedReference
+    private Question question;
 }
