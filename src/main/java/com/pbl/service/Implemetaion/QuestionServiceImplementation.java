@@ -1,6 +1,7 @@
 package com.pbl.service.Implemetaion;
 
 
+import com.pbl.exception.QuestionNotFoundException;
 import com.pbl.model.Question;
 import com.pbl.model.Student;
 import com.pbl.model.UserAuth;
@@ -42,12 +43,12 @@ public class QuestionServiceImplementation implements QuestionService {
     @Transactional
     public void removeQuestionById(int problemId) {
         Question question = repository.findByProblemId(problemId)
-                .orElseThrow(() -> new NoSuchElementException("A question with problemId " + problemId + " already exists."));
+                .orElseThrow(() -> new QuestionNotFoundException("A question with problemId " + problemId + " already exists."));
         // Break relationships before deletion
-        for (Student student : question.getStudents()) {
-            student.setQuestion(null);
-        }
-        question.getStudents().clear();
+//        for (Student student : question.getStudents()) {
+//            student.setQuestion(null);
+//        }
+//        question.getStudents().clear();
 
         // Now delete the question
         repository.delete(question);

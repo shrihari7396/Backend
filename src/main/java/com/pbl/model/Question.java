@@ -27,7 +27,7 @@ public class Question {
     @Column(nullable = false)
     private String question;
 
-    @OneToMany(mappedBy = "question", orphanRemoval = false)
-    @JsonBackReference
-    private List<Student> students = new ArrayList<>();
+//    @OneToMany(mappedBy = "question", orphanRemoval = false)
+//    @JsonBackReference
+//    private List<Student> students = new ArrayList<>();
 }

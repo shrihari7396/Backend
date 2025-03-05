@@ -20,7 +20,7 @@ public class AuthenticationController {
         return "Hello Authentication Controller here...!";
     }
 
-    @PostMapping("/login")
+//    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserAuth userAuth) {
         return ResponseEntity.status(HttpStatus.OK).body(service.verifyUserAuth(userAuth));
     }

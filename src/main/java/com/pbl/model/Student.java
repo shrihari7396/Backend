@@ -23,8 +23,9 @@ public class Student {
     @Builder.Default
     private ROLE role = ROLE.STUDENT;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
+//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
+    @OneToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id", nullable = true)
-    @JsonManagedReference
+//    @JsonManagedReference
     private Question question;
 }

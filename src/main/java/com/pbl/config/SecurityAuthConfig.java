@@ -38,10 +38,10 @@ public class SecurityAuthConfig {
 
         http.authorizeHttpRequests(request->
             request
-//                    .requestMatchers("/auth/**").permitAll()
-//                    .requestMatchers("/admin/**").hasRole("ADMIN")
-//                    .requestMatchers("/student/**").hasRole("STUDENT")
-//                    .anyRequest().authenticated()
+                //    .requestMatchers("/auth/**").permitAll()
+                //    .requestMatchers("/admin/**").hasRole("ADMIN")
+                //    .requestMatchers("/student/**").hasRole("STUDENT")
+                //    .anyRequest().authenticated()
                     .anyRequest().permitAll()
         );
         http.formLogin(customizer->customizer.disable());

@@ -1,6 +1,7 @@
 package com.pbl.controller.exceptionHandler;
 
 import com.pbl.exception.QuestionNotAssignedException;
+import com.pbl.exception.QuestionNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -43,5 +44,10 @@ public class ExceptionHandlerController {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<String> handleException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(methodArgumentTypeMismatchException.getMessage());
+    }
+
+    @ExceptionHandler(QuestionNotFoundException.class)
+    public ResponseEntity<String> handleException(QuestionNotFoundException questionNotFoundException) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(questionNotFoundException.getMessage());
     }
 }
