@@ -60,4 +60,9 @@ public class StudentServiceImplementation implements StudentService {
             }
         }
     }
+
+    @Override
+    public Boolean isUserExist(String username) {
+        return repository.existsByUsername(username);
+    }
 }

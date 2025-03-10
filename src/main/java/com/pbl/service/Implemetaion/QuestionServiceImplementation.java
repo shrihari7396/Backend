@@ -3,7 +3,6 @@ package com.pbl.service.Implemetaion;
 
 import com.pbl.exception.QuestionNotFoundException;
 import com.pbl.model.Question;
-import com.pbl.model.Student;
 import com.pbl.model.UserAuth;
 import com.pbl.model.UserDetailsImplementation;
 import com.pbl.repository.QuestionRepository;
@@ -18,7 +17,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class QuestionServiceImplementation implements QuestionService {

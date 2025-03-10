@@ -20,6 +20,10 @@ public class StudentController {
 
     @GetMapping("/getQuestion/{studentUsername}")
     public ResponseEntity<?> student(@PathVariable String studentUsername) {
+        Boolean userExist = service.isUserExist(studentUsername);
+        if(userExist) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found!!!");
+        }
         service.check();
         if(!BooleanClass.questionAssigned) {
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body("Question Not Assigned yet !!!");
