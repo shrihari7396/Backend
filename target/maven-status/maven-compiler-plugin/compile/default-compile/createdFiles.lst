@@ -6,9 +6,13 @@ com\pbl\service\UserAuthService.class
 com\pbl\BackendApplication.class
 com\pbl\model\UserAuth.class
 com\pbl\service\Implemetaion\StudentServiceImplementation.class
+com\pbl\exception\QuestionNotFoundException.class
 com\pbl\model\Question.class
+com\pbl\controller\AuthenticationController.class
 com\pbl\service\AdminService.class
+com\pbl\controller\exceptionHandler\ExceptionHandlerController.class
 com\pbl\model\UserDetailsImplementation.class
+com\pbl\service\Implemetaion\QuestionServiceImplementation$UserDetailsServiceImplementation.class
 com\pbl\controller\StudentController.class
 com\pbl\model\Student$StudentBuilder.class
 com\pbl\service\JWTService.class

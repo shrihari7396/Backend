@@ -50,4 +50,9 @@ public class ExceptionHandlerController {
     public ResponseEntity<String> handleException(QuestionNotFoundException questionNotFoundException) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(questionNotFoundException.getMessage());
     }
+
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<String> handleException(NullPointerException nullPointerException) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(nullPointerException.getMessage());
+    }
 }

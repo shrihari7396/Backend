@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserAuthRepository extends JpaRepository<UserAuth, Integer> {
     UserAuth findByUsername(String username);
-    UserAuth deleteByUsername(String username);
+    void deleteByUsername(String username);
 }

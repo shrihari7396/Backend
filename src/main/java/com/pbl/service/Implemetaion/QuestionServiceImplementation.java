@@ -59,19 +59,4 @@ public class QuestionServiceImplementation implements QuestionService {
 
     public static class JWTServiceImplementation {
     }
-
-    @Service
-    public static class UserDetailsServiceImplementation implements UserDetailsService {
-        @Autowired
-        UserAuthRepository repo;
-
-        @Override
-        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-            UserAuth userAuth = repo.findByUsername(username);
-            if(userAuth==null) {
-                throw  new UsernameNotFoundException("Username not found!");
-            }
-            return new UserDetailsImplementation(userAuth);
-        }
-    }
 }
