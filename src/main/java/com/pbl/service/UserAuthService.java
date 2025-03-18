@@ -7,4 +7,5 @@ public interface UserAuthService {
     Student addStudent(Student student);
     void removeStudent(String student);
     UserAuth register(UserAuth userAuth);
+    String verify(UserAuth userAuth);
 }

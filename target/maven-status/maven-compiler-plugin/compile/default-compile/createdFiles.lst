@@ -12,7 +12,6 @@ com\pbl\controller\AuthenticationController.class
 com\pbl\service\AdminService.class
 com\pbl\controller\exceptionHandler\ExceptionHandlerController.class
 com\pbl\model\UserDetailsImplementation.class
-com\pbl\service\Implemetaion\QuestionServiceImplementation$UserDetailsServiceImplementation.class
 com\pbl\controller\StudentController.class
 com\pbl\model\Student$StudentBuilder.class
 com\pbl\service\JWTService.class
@@ -27,6 +26,7 @@ com\pbl\model\Question$QuestionBuilder.class
 com\pbl\service\Implemetaion\JWTServiceImplementation.class
 com\pbl\service\Implemetaion\QuestionServiceImplementation.class
 com\pbl\helper\BooleanClass.class
+com\pbl\service\Implemetaion\UserDetailsServiceImplementation.class
 com\pbl\service\StudentService.class
 com\pbl\service\Implemetaion\AdminServiceImplementation.class
 com\pbl\controller\AdminController.class

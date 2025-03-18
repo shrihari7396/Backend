@@ -22,7 +22,7 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserAuth userAuth) {
-        return ResponseEntity.status(HttpStatus.OK).body("In Progress!!!");
+        return ResponseEntity.status(HttpStatus.OK).body(service.verify(userAuth));
     }
 
     @PostMapping("/register")
