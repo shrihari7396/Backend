@@ -69,8 +69,8 @@ public class JWTServiceImplementation implements JWTService {
         return Jwts.parser()
                 .verifyWith(getKey())
                 .build()
-                .parseSignedClaims(token)
-                .getBody();
+                .parseSignedClaims(token).
+                getPayload();
     }
 
     @Override
