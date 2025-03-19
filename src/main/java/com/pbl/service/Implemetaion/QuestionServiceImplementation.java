@@ -3,9 +3,11 @@ package com.pbl.service.Implemetaion;
 
 import com.pbl.exception.QuestionNotFoundException;
 import com.pbl.model.Question;
+import com.pbl.model.Student;
 import com.pbl.model.UserAuth;
 import com.pbl.model.UserDetailsImplementation;
 import com.pbl.repository.QuestionRepository;
+import com.pbl.repository.StudentRepository;
 import com.pbl.repository.UserAuthRepository;
 import com.pbl.service.QuestionService;
 import jakarta.transaction.Transactional;
@@ -23,6 +25,8 @@ public class QuestionServiceImplementation implements QuestionService {
 
     @Autowired
     private QuestionRepository repository;
+    @Autowired
+    private StudentRepository studentRepository;
 
     @Override
     public Question addQuestion(Question question) {
@@ -43,9 +47,10 @@ public class QuestionServiceImplementation implements QuestionService {
         Question question = repository.findByProblemId(problemId)
                 .orElseThrow(() -> new QuestionNotFoundException("A question with problemId " + problemId + " already exists."));
         // Break relationships before deletion
-//        for (Student student : question.getStudents()) {
-//            student.setQuestion(null);
-//        }
+        for (Student student : question.getStudents()) {
+            student.setQuestion(null); // Set question to null instead of deleting
+            studentRepository.save(student);
+        }
 //        question.getStudents().clear();
 
         // Now delete the question

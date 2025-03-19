@@ -17,7 +17,7 @@ public class Admin {
     @Column(unique = true)
     private  String username;
     private String password;
-
+    private String name;
     public Admin(String username, String password) {
         this.username = username;
         this.password = password;

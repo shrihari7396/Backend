@@ -37,10 +37,11 @@ public class SecurityAuthConfig {
         http.csrf(csrf -> csrf.disable());
 
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/admin**").hasRole("ADMIN")
-                .requestMatchers("/api/student**").hasRole("STUDENT")
-                .anyRequest().authenticated()
+//                .requestMatchers("/api/auth/**").permitAll()
+//                .requestMatchers("/api/admin**").hasRole("ADMIN")
+//                .requestMatchers("/api/student**").hasRole("STUDENT")
+//                .anyRequest().authenticated()
+                        .anyRequest().permitAll()
         );
 
         http.formLogin(form -> form.disable());

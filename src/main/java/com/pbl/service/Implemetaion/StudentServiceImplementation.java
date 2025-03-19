@@ -57,8 +57,10 @@ public class StudentServiceImplementation implements StudentService {
         for (Student student : students) {
             if(student.getQuestion()==null) {
                 BooleanClass.questionAssigned=false;
+                return;
             }
         }
+        BooleanClass.questionAssigned=true;
     }
 
     @Override

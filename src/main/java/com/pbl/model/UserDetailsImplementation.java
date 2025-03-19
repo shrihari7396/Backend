@@ -24,12 +24,6 @@ public class UserDetailsImplementation implements UserDetails {
         return this.auth.getPassword();
     }
 
-    /**w
-     * Returns the username used to authenticate the user. Cannot return
-     * <code>null</code>.
-     *
-     * @return the username (never <code>null</code>)
-     */
     @Override
     public String getUsername() {
         return this.auth.getUsername();
