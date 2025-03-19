@@ -13,22 +13,12 @@ public class UserDetailsImplementation implements UserDetails {
     public UserDetailsImplementation(UserAuth auth) {
         this.auth=auth;
     }
-    /**
-     * Returns the authorities granted to the user. Cannot return <code>null</code>.
-     *
-     * @return the authorities, sorted by natural key (never <code>null</code>)
-     */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(this.auth.getRole().name()));
     }
 
-    /**
-     * Returns the password used to authenticate the user.
-     *
-     * @return the password
-     */
     @Override
     public String getPassword() {
         return this.auth.getPassword();
