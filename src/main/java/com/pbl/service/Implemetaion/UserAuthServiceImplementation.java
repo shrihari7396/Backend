@@ -63,7 +63,7 @@ public class UserAuthServiceImplementation implements UserAuthService {
     public String verify(UserAuth userAuth) {
         Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userAuth.getUsername(), userAuth.getPassword()));
         if(auth!=null && auth.isAuthenticated()) {
-            return jwtService.generateToken(userAuth.getUsername());
+            return jwtService.generateToken(userAuth.getUsername(), userAuth.getRole().toString());
         } else {
             return "fail";
         }

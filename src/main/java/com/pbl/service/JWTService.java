@@ -8,8 +8,9 @@ import java.util.Date;
 import java.util.function.Function;
 
 public interface JWTService {
-    String generateToken(String username);
+    String generateToken(String username, String role);
     SecretKey getKey();
+    String ExtractUserRole(String token);
     String extractUserName(String token);
     <T> T extractClaim(String token, Function<Claims, T> claimResolver);
     Claims extractAllClaims(String token);

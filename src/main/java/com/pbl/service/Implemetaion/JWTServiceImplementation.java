@@ -34,8 +34,9 @@ public class JWTServiceImplementation implements JWTService {
 
 
     @Override
-    public String generateToken(String username) {
+    public String generateToken(String username, String role) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("role", role);
         return Jwts.builder()
                 .claims()
                 .add(claims)
@@ -45,6 +46,11 @@ public class JWTServiceImplementation implements JWTService {
                 .and()
                 .signWith(getKey())
                 .compact();
+    }
+
+    @Override
+    public String ExtractUserRole(String token) {
+        return extractClaim(token, claims ->  claims.get("role", String.class));
     }
 
     @Override
