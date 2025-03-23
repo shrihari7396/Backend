@@ -31,8 +31,4 @@ public class Question {
     @JsonIgnore
     @OneToMany(mappedBy = "question", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Student> students;
-
-//    @OneToMany(mappedBy = "question", orphanRemoval = false)
-//    @JsonBackReference
-//    private List<Student> students = new ArrayList<>();
 }

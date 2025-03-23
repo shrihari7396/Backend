@@ -28,9 +28,4 @@ public class Student {
     @JoinColumn(name = "question_id", nullable = true)
     @JsonManagedReference
     private Question question;
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
-//    @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "question_id", nullable = true)
-//    @JsonManagedReference
-//    private Question question;
 }
