@@ -5,13 +5,12 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,16 +19,17 @@ import java.util.function.Function;
 @Service
 public class JWTServiceImplementation implements JWTService {
 
-    private String secretKey="";
+    private final String secretKey;
 
-    public JWTServiceImplementation() {
-        try {
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacSHA256");
-            SecretKey sk = keyGenerator.generateKey();
-            secretKey = Base64.getEncoder().encodeToString(sk.getEncoded());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
+    public JWTServiceImplementation(@Value("${jwt.secret}") String secretKey) {
+//        try {
+//            KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacSHA256");
+//            SecretKey sk = keyGenerator.generateKey();
+//            secretKey = Base64.getEncoder().encodeToString(sk.getEncoded());
+//        } catch (NoSuchAlgorithmException e) {
+//            throw new RuntimeException(e);
+//        }
+        this.secretKey = secretKey;
     }
 
 
@@ -42,7 +42,7 @@ public class JWTServiceImplementation implements JWTService {
                 .add(claims)
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 10000*60 * 60 * 30))
+                .expiration(new Date(System.currentTimeMillis() + 1000*60 * 60 * 30))
                 .and()
                 .signWith(getKey())
                 .compact();
@@ -75,8 +75,8 @@ public class JWTServiceImplementation implements JWTService {
         return Jwts.parser()
                 .verifyWith(getKey())
                 .build()
-                .parseSignedClaims(token).
-                getPayload();
+                .parseSignedClaims(token)
+                .getPayload();
     }
 
     @Override

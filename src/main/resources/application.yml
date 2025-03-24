@@ -1,7 +1,7 @@
 spring:
   application:
     name: Backend
-  #Tejas@301005
+
   # Database Configuration
   datasource:
     username: root
@@ -9,6 +9,7 @@ spring:
     url: jdbc:mysql://localhost:3306/pbl25
     name: PBL
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   output:
     ansi:
       enabled: always
@@ -21,23 +22,18 @@ spring:
         format_sql: true
         show_sql: true
 
-        #logging.level.org.hibernate.SQL=DEBUG
-        #logging.level.org.hibernate.transaction=TRACE
-
-  # Spring Security
-#  security:
-#    user:
-#      name: user
-#      password: user
-
 # Server specification
 server:
   port: 8081
 
-# Request Information and their status when they are called by another application
+# Logging Configuration
 logging:
   level:
     org:
       springframework:
         web: DEBUG
         web.filter.CommonsRequestLoggingFilter: DEBUG
+
+# JWT Configuration
+jwt:
+  secret: "eA7S1nVl3pC8Hjk2mL9FQvX4T6YpJqW8rMbGzKdY5N0="
