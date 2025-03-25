@@ -3,6 +3,7 @@ package com.pbl.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,7 +29,7 @@ public class Question {
     @Column(nullable = false)
     private String question;
 
-    @JsonIgnore
+    @JsonManagedReference
     @OneToMany(mappedBy = "question", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Student> students;
 }

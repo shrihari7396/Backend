@@ -1,5 +1,6 @@
 package com.pbl.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,6 +27,6 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = true)
-    @JsonManagedReference
+    @JsonBackReference
     private Question question;
 }
