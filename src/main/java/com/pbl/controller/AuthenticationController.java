@@ -1,5 +1,6 @@
 package com.pbl.controller;
 
+import com.pbl.helper.controller.LoginResponse;
 import com.pbl.model.ROLE;
 import com.pbl.model.UserAuth;
 import com.pbl.service.UserAuthService;
@@ -22,11 +23,11 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserAuth userAuth) {
-        return ResponseEntity.status(HttpStatus.OK).body(service.verify(userAuth));
+        return ResponseEntity.status(HttpStatus.OK).body(new LoginResponse(service.verify(userAuth)));
     }
 
     @PostMapping("/register")
-    public  ResponseEntity<UserAuth> register(@RequestBody UserAuth userAuth) {
+    public  ResponseEntity<?> register(@RequestBody UserAuth userAuth) {
         userAuth.setRole(ROLE.ADMIN);
         UserAuth register;
         try {
