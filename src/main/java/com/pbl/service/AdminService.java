@@ -10,6 +10,7 @@ public interface AdminService {
     // Admin
     Admin addadmin(Admin admin);
     void removeAdminByUsername(String username);
+    Admin getAdminByUsername(String username);
 
     // Question
     Question addQuestion(Question question);

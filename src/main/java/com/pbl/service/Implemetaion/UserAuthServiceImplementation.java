@@ -1,12 +1,15 @@
 package com.pbl.service.Implemetaion;
 
 
+import com.pbl.helper.controller.LoginResponse;
 import com.pbl.model.Admin;
 import com.pbl.model.Student;
 import com.pbl.model.UserAuth;
 import com.pbl.repository.AdminRepository;
 import com.pbl.repository.UserAuthRepository;
+import com.pbl.service.AdminService;
 import com.pbl.service.JWTService;
+import com.pbl.service.StudentService;
 import com.pbl.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
@@ -65,7 +68,7 @@ public class UserAuthServiceImplementation implements UserAuthService {
         if(auth!=null && auth.isAuthenticated()) {
             return jwtService.generateToken(userAuth.getUsername(), userAuth.getRole().toString());
         } else {
-            return "fail";
+            return "Fail";
         }
     }
 }

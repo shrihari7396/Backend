@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
     void deleteByUsername(String username);
     boolean existsByUsername(String username);
-    void findByUsername(String username);
+    Admin findByUsername(String username);
 }

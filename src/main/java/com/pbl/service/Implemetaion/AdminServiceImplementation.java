@@ -29,6 +29,11 @@ public class AdminServiceImplementation implements AdminService {
         this.adminRepository.deleteByUsername(username);
     }
 
+    @Override
+    public Admin getAdminByUsername(String username) {
+        return adminRepository.findByUsername(username);
+    }
+
     // Question Manipulation
     @Autowired
     private QuestionService questionService;

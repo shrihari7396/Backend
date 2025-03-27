@@ -13,4 +13,5 @@ public interface StudentService {
     List<Student> getAllStudents();
     void check();
     Boolean isUserExist(String username);
+    Student getStudentByUsername(String username);
 }

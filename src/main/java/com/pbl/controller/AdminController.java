@@ -20,7 +20,6 @@ public class AdminController {
     private AdminService service;
 
     // For Students
-
     @GetMapping("/allStudents")
     public ResponseEntity<List<Student>> getAllStudents() {
         return ResponseEntity.status(HttpStatus.OK).body(this.service.getAllStudents());
