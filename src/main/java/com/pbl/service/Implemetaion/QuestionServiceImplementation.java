@@ -4,18 +4,12 @@ package com.pbl.service.Implemetaion;
 import com.pbl.exception.QuestionNotFoundException;
 import com.pbl.model.Question;
 import com.pbl.model.Student;
-import com.pbl.model.UserAuth;
-import com.pbl.model.UserDetailsImplementation;
 import com.pbl.repository.QuestionRepository;
 import com.pbl.repository.StudentRepository;
-import com.pbl.repository.UserAuthRepository;
 import com.pbl.service.QuestionService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

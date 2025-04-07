@@ -12,6 +12,7 @@ public class CorsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
+            @SuppressWarnings("null")
             @Override
             public void addCorsMappings(@Nullable CorsRegistry registry) {
                 assert registry != null;

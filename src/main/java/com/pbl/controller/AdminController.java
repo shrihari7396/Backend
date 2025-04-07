@@ -28,6 +28,7 @@ public class AdminController {
     @PostMapping("/addStudent")
     public ResponseEntity<String> addStudent(@RequestBody Student student) {
         try {
+            @SuppressWarnings("unused")
             Student addedStudent = this.service.addStudent(student);
             return ResponseEntity.status(HttpStatus.CREATED).body("Student added successfully!");
         } catch (DuplicateKeyException e) {  // Catch duplicate username exception
@@ -78,6 +79,7 @@ public class AdminController {
     @PostMapping("/addQuestion")  // Changed from @GetMapping to @PostMapping
     public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         try {
+            @SuppressWarnings("unused")
             Question addedQuestion = this.service.addQuestion(question);
             return ResponseEntity.status(HttpStatus.OK).body("Question added successfully!");
         } catch (DuplicateKeyException e) {

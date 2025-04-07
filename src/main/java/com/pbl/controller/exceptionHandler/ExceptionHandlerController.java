@@ -2,6 +2,7 @@ package com.pbl.controller.exceptionHandler;
 
 import com.pbl.exception.QuestionNotAssignedException;
 import com.pbl.exception.QuestionNotFoundException;
+import io.jsonwebtoken.security.SignatureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -15,6 +16,11 @@ import java.util.NoSuchElementException;
 
 @RestControllerAdvice
 public class ExceptionHandlerController {
+
+    @ExceptionHandler(SignatureException.class)
+    public ResponseEntity<Object> handleSignatureException(SignatureException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ex.getMessage());
+    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<String> handleException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException) {

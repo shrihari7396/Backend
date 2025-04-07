@@ -65,6 +65,7 @@ public class AdminServiceImplementation implements AdminService {
     @Autowired
     private UserAuthService userAuthService;
 
+    @SuppressWarnings("unused")
     public Student addStudent(Student student) {
         Student addedStudent=null;
         try {
