@@ -40,9 +40,8 @@ public class SecurityAuthConfig {
         http.authorizeHttpRequests(auth -> auth
                  .requestMatchers("/api/auth/**").permitAll()
                  .requestMatchers("/api/admin**").hasRole("ADMIN")
-                 .requestMatchers("/api/student/getQuestion/**").hasRole("STUDENT")
+                 .requestMatchers("/api/student/**").hasRole("STUDENT")
                  .anyRequest().authenticated()
-//                       .anyRequest().permitAll()
         );
 
         http.formLogin(AbstractHttpConfigurer::disable);
