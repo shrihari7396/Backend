@@ -1,5 +1,6 @@
 package com.pbl.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -27,6 +28,7 @@ public class Question {
     private String question;
 
     @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "question", cascade = CascadeType.PERSIST, orphanRemoval = false)
     private List<Student> students;
 }
